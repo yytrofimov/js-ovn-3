@@ -3,3 +3,6 @@ for (i in fruits) {
     console.log(fruits[i])
 }
 console.log(fruits.length)
+for (i in fruits) {
+    console.log(fruits[i])
+}
