@@ -12,3 +12,6 @@ function createUlFromArray (numbers) {
     document.body.append(numbersElement)
 }
 createUlFromArray(numbers)
+numbers2 = [1000,2000,3000]
+numbers = numbers.concat(numbers2)
+createUlFromArray(numbers)
