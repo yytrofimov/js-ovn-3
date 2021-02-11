@@ -30,6 +30,13 @@ document.getElementById("division").addEventListener("click", function () {
   countResult(10, 5, "/");
 });
 //Uppgift 3
-document.getElementById("getDate").addEventListener("click", function () {
+document.getElementById("get_date").addEventListener("click", function () {
   document.getElementById("today").innerHTML = new Date();
 });
+//Uppgift 4
+//Den här metoden är mer exakt
+function onLoadTime() {
+  var loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
+  document.getElementById("loadtime").innerHTML = loadTime;
+}
+window.onload = onLoadTime;
