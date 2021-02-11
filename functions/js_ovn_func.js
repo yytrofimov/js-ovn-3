@@ -37,6 +37,25 @@ document.getElementById("get_date").addEventListener("click", function () {
 //Den här metoden är mer exakt
 function onLoadTime() {
   var loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
-  document.getElementById("loadtime").innerHTML = loadTime;
+  document.getElementById("loadtime").innerHTML = "Loadtime:" + loadTime;
 }
 window.onload = onLoadTime;
+//Uppgift 5
+function getDate() {
+  let months = [
+    "januari",
+    "februari",
+    "mars",
+    "april",
+    "maj",
+    "juni",
+    "juli",
+    "augusti",
+    "september",
+    "oktober",
+    "november",
+    "december",
+  ];
+  document.getElementById("date").innerHTML = months[new Date().getMonth()] + "," + new Date().getFullYear();
+}
+document.getElementById("get_date_2").addEventListener("click", getDate);
