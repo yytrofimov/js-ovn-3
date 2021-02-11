@@ -29,4 +29,7 @@ document.getElementById("multiplication").addEventListener("click", function () 
 document.getElementById("division").addEventListener("click", function () {
   countResult(10, 5, "/");
 });
-
+//Uppgift 3
+document.getElementById("getDate").addEventListener("click", function () {
+  document.getElementById("today").innerHTML = new Date();
+});
