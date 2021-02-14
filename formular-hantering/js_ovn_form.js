@@ -1,3 +1,5 @@
+//Då kan jag ta ut samma valideringsfunktioner från varje uppgift för att inte beskriva dem samma varje gång, men det tar tid
+
 //Uppgift 1
 //Allt görs i separata funktioner för anpassningsbarhet till andra data
 function mealFormHandler(formID, divID) {
