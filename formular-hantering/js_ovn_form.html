@@ -8,11 +8,23 @@
     </head>
     <body>
         <p>
-            <label for="meal_form">Mata in en måltid:</label>
+            <label for="meal_form">Ange måltid:</label>
             <input type="text" name="meal_form" id="meal_input" />
-            <button type="submit" id="meal_out">Utgång till konsolen!</button>
+            <button type="submit" id="meal_out">Utgång!</button>
         </p>
         <div id="meal"></div>
+        <p>
+            <label for="calc_form">Ange nummer 1,2:</label>
+            <!-- För att kunna använda decimal värde lättare använder jag type text -->
+            <input type="text" name="calc_form" class="calc_input" />
+            <input type="text" name="calc_form" class="calc_input" />
+            <button id="addition">Klicka på mig till +</button>
+            <button id="subtraction">Klicka på mig till -</button>
+            <button id="multiplication">Klicka på mig till *</button>
+            <button id="division">Klicka på mig till /</button>
+        </p>
+        <div id="resultat"></div>
+        <!-- Idk varför inte result -->
         <script src="js_ovn_form.js"></script>
     </body>
 </html>
