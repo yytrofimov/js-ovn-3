@@ -132,3 +132,57 @@ document.getElementById("date_out").addEventListener("click", function () {
     dateFormHandler("date_input", "date");
 });
 //Uppgift 4
+function dateFormHandler(formsClass, divID) {
+    function validateForm(formsClass) {
+        //Vi kontrollerar om formuläret är tomt
+        //Vi kontrollerar inte riktigheten av de angivna data
+        let cond = true;
+        for (el of document.getElementsByClassName(formsClass)) {
+            if (el.value != "") {
+                cond = cond && true;
+            } else {
+                cond = false;
+            }
+        }
+        return cond;
+    }
+    let dates = [];
+    function getDates(formsClass) {
+        for (form of document.getElementsByClassName(formsClass)) {
+            for (i of [form.value.split("-")]) {
+                dates.push(new Date(i[0], i[1], i[2]));
+            }
+        }
+        return dates;
+    }
+    function outputCalc(dates, divID) {
+        out = Math.round((new Date() - dates[0]) / (24 * 60 * 60 * 1000));
+        if (out > 0) {
+            document.getElementById(divID).innerHTML =
+                Math.round((new Date() - dates[0]) / (24 * 60 * 60 * 1000)) + " dagar kom från din födelsedatum";
+        } else {
+            console.log(false);
+            alert("Den här datum passar inte. Försök igen!");
+        }
+    }
+    if (validateForm(formsClass)) {
+        getDates(formsClass);
+        outputCalc(dates, divID);
+    } else {
+        alert("Du har inte angett något!");
+        console.log(false);
+    }
+}
+document.getElementById("date_out_2").addEventListener("click", function () {
+    dateFormHandler("date_input_2", "date_2");
+});
+//Uppgift 5
+function ageValidation() {
+    let age = prompt("Hur gammal är du?");
+    if (age >= 18) {
+        alert("Du är myndig!");
+    } else {
+        alert("Du är underårig!");
+    }
+}
+ageValidation();
