@@ -58,7 +58,6 @@ function calcFormHandler(formsClass, divID, operation) {
         for (form of document.getElementsByClassName(formsClass)) {
             numbers.push(parseInt(form.value));
         }
-        console.log(numbers);
         return numbers;
     }
     function outputCalc(numbers, divID, operation) {
@@ -93,3 +92,43 @@ document.getElementById("multiplication").addEventListener("click", function () 
 document.getElementById("division").addEventListener("click", function () {
     calcFormHandler("calc_input", "resultat", "/");
 });
+//Uppgift 3
+function dateFormHandler(formsClass, divID) {
+    function validateForm(formsClass) {
+        //Vi kontrollerar om formuläret är tomt
+        //Vi kontrollerar inte riktigheten av de angivna data
+        let cond = true;
+        for (el of document.getElementsByClassName(formsClass)) {
+            if (el.value != "") {
+                cond = cond && true;
+            } else {
+                cond = false;
+            }
+        }
+        return cond;
+    }
+    let dates = [];
+    function getDates(formsClass) {
+        for (form of document.getElementsByClassName(formsClass)) {
+            for (i of [form.value.split("-")]) {
+                dates.push(new Date(i[0], i[1], i[2]));
+            }
+        }
+        return dates;
+    }
+    function outputCalc(dates, divID) {
+        document.getElementById(divID).innerHTML =
+            Math.round(Math.abs((dates[1] - dates[0]) / (24 * 60 * 60 * 1000))) + " dagar mellan";
+    }
+    if (validateForm(formsClass)) {
+        getDates(formsClass);
+        outputCalc(dates, divID);
+    } else {
+        alert("Du har inte angett något!");
+        console.log(false);
+    }
+}
+document.getElementById("date_out").addEventListener("click", function () {
+    dateFormHandler("date_input", "date");
+});
+//Uppgift 4
