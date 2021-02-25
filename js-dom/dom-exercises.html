@@ -66,6 +66,11 @@
             uppg3.style.color = "red";
             let upp4 = document.querySelector("body > form:nth-child(7) > input[type=submit]");
             upp4.style.color = "pink";
+            let uppg5 = uppg1.getElementsByTagName("input")[0];
+            console.log(uppg5);
+            let uppg6 = uppg1.getElementsByTagName("input")[uppg1.getElementsByTagName("input").length - 1];
+            //Det verkar dumt att jag inte kan använda -1 för att komma åt det sista elementet från slutet som i Python
+            console.log(uppg6);
         </script>
     </body>
 </html>
