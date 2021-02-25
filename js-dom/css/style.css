@@ -1,0 +1,24 @@
+#gallery {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+#collection {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#collection ul {
+    list-style: none;
+}
+
+#viewport {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.active_img {
+    border: 5px solid red;
+}
