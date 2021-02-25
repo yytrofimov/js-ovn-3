@@ -58,7 +58,10 @@
             h3.style.backgroundColor = "red";
             let uppg1 = document.getElementById("age-table");
             uppg1.style.color = "blue";
-            
+            let uppg2 = uppg1.getElementsByTagName("label");
+            for (el of uppg2) {
+                el.style.fontSize = "x-large";
+            }
         </script>
     </body>
 </html>
